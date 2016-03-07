@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		*{
+			box-sizing: border-box;
+		}
+		.border{
+			border: 1px solid #000;
+			width: 200px;
+			height: 200px;
+			float: left;
+			margin: 5px;
+		}
+		.alldivs{
+			float: left;
+			width: 60%;
+			height: 800px;
+		}
+		.rightSection{
+			border-left: 1px dashed #000;
+			float: left;
+			width: 40%;
+			padding: 10px;
+
+		}
+		.paint{
+			
+			height: 250px;
+		}
+		form{
+	width: 500px;
+	margin: 0 auto;
+}
+form label{
+	display: inline-block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.form-group{
+	margin-bottom: 10px;
+}
+
+input{
+	display: block;
+	width: 100%;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+}
+	</style>
+</head>
+<body>
+<div class="alldivs" id="all" ondrop="dropall(event)" ondragover="allowDrop(event)">
+	<div class="border" id="div1" ondragstart="drag(event)" draggable="true">
+		Div 1
+	</div>
+	<div class="border" id="div2" ondragstart="drag(event)" draggable="true">Div 2</div>
+	<div class="border"  id="div3" ondragstart="drag(event)" draggable="true">Div 3</div>
+	<div class="border"  id="div4" ondragstart="drag(event)" draggable="true"> Div 4</div>
+</div>
+<div class="rightSection">
+	<h1>Paint Section</h1>
+	<div class="paint" id="paint"  ondrop="drop(event)" ondragover="allowDrop(event)">
+	</div>
+	<div>
+	<form>
+	<fieldset>
+		<legend>Style</legend>
+			<label for="borcol">Border color</label>
+			<input type="color" id="borcol"></input>
+			<label for="borthick">Border thickness</label>
+			<input type="range" min="0" max="100" id="borthick"></input>
+			<label for="bgcolor">Background color</label>
+			<input type="color" id="bgcolor"></input>
+			<label for="roundedged">Rounded edges</label>
+			<input type="range" min="0" max="360" id="roundedged"></input>
+			<button type="button" onclick="applyColor(); return false">Apply</button>	
+	</fieldset>
+	</form>
+
+	</div>
+</div>
+<!-- <img id="drag1" src="img_logo.gif" draggable="true"
+ondragstart="drag(event)" width="336" height="69"> -->
+<script type="text/javascript" src="dragDrop.js"></script>
+</body>
+</html>
